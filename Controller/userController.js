@@ -1,7 +1,11 @@
+const User = require("../Model/userModel");
 
-exports.signup = (req,res) => {
+exports.getAlluser = async(req, res) => {
+    const user = await User.find();
     res.status(200).json({
         status: "success",
-        message:"user created successfuly"
+        data: {
+            user: user,
+        }
     })
-}
+}         
